@@ -877,11 +877,12 @@ input, select, textarea {
 		display: inline-block;
 		position: relative;
 		border: 0;
+		object-fit: cover;
 	}
 
 		.image.filtered:after {
 			background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25));
-			background-size: 128px 128px, auto;
+			background-size: contain;
 			pointer-events: none;
 			content: '';
 			position: absolute;
@@ -889,7 +890,7 @@ input, select, textarea {
 			left: 0;
 			width: 100%;
 			height: 100%;
-			opacity: 1;
+			opacity: 0;
 			z-index: 1;
 		}
 
@@ -3699,3 +3700,31 @@ input, select, textarea {
 			}
 
 	}
+
+	.project-card {
+    width: 40%; /* largeur de la carte */
+    margin-left: auto; /* pousse la div vers la droite */
+    background: rgba(0, 0, 0, 0.6); /* fond sombre transparent */
+    backdrop-filter: blur(2px); /* effet de flou */
+    color: #fff; /* texte en blanc */
+    padding: 20px;
+    border-radius: 12px; /* coins arrondis */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* petite ombre */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* petit effet au survol */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.project-card h2 {
+    margin-bottom: 10px;
+    font-size: 1.4em;
+    color: #f5f3e6; /* titre doré pour contraste */
+}
+
+.project-card a {
+    text-decoration: none;
+    color: inherit; /* garde la couleur du texte */
+}
